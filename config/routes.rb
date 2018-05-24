@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categories, except: [:destroy]
+    resources :categories, except: [:destroy, :edit, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
