@@ -16,7 +16,7 @@ class CartsController < ApplicationController
 
     redirect_to :back
     else
-      redirect_to :back
+      redirect_to :back 
     end
   end
 
