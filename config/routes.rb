@@ -5,22 +5,47 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
+
   resource :cart, only: [:show] do
     put    :add_item
     delete :remove_item
   end
 
   resources :orders, only: [:create, :show]
-  
+
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
   end
 
   namespace :admin do
-    resources :categories, except: [:destroy, :edit, :update]
+    resources :categories, except: [:edit, :update, :delete]
   end
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+
+  # GifVault::Application.routes.draw do
+
+  #     # This route sends requests to our naked url to the *cool* action in the *gif* controller.
+  #     root to: 'gif#cool'
+
+  #     # I've created a gif controller so I have a page I can secure later.
+  #     # This is optional (as is the root to: above).
+  #     get '/cool' => 'gif#cool'
+  #     get '/sweet' => 'gif#sweet'
+
+  #     # These routes will be for signup. The first renders a form in the browse, the second will
+  #     # receive the form and create a user in our database using the data given to us by the user.
+  #     get '/signup' => 'users#new'
+  #     post '/users' => 'users#create'
+
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
