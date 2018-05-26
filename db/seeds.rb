@@ -132,5 +132,51 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create!({
+  email: "email@fam.jcole",
+  password_digest: "12313123",
+  first_name: "Jermaine",
+  last_name: "Cole",
+})
+
+
+User.create!({
+  email: "email@fam.jcole",
+  password_digest: "12313123",
+  first_name: "Jermaine",
+  last_name: "Cole",
+})
+
+
+User.create!({
+  email: "email@fam.jcole",
+  password_digest: "12313123",
+  first_name: "Jermaine",
+  last_name: "Cole",
+})
+
+
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: "aaaaekfm",
+  rating: 5
+})
+
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: "aekssfm",
+  rating: 3
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: "aekfmss",
+  rating: 2
+})
 
 puts "DONE!"
