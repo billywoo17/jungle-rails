@@ -25,6 +25,8 @@ RSpec.describe User, type: :model do
   expect(user).to_not be_valid
   end
 
+  
+
   it "password should be 3 letters or longer" do
     user = User.new({
       email: "email@fam.jcole",
