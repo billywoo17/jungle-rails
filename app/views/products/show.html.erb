@@ -7,28 +7,18 @@
       <br>Rating: <%=review.rating%>
       <br>Description: <%= review.description %>
     <% end %>
-
     <%= form_for :review, url: @product.id.to_s+"/reviews" do |f| %>
       <div class="form-group">
-                <%= f.label "Rating" %>
-
-      <%= f.select :rating, [1, 2, 3, 4, 5]%>
-
-        </div>
-        <div class="form-group">
-          <%= f.label :Descripton %>
-          <%= f.text_field :description %>
-        </div>                
-        <%= f.submit 'Submit review', class: 'btn btn-primary' %>
+        <%= f.label "Rating" %>
+        <%= f.select :rating, [1, 2, 3, 4, 5]%>
+      </div>
+      <div class="form-group">
+        <%= f.label :Descripton %>
+        <%= f.text_field :description %>
+      </div>                
+      <%= f.submit 'Submit review', class: 'btn btn-primary' %>
       <% end %>
     </div>
- 
-
-
-
-
-
-
 
   <article class="product-detail">
     <div class="row">
@@ -50,7 +40,5 @@
         </dl>
       </div>
     </div>
-
   </article>
-
 </section>
